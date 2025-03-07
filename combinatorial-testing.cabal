@@ -1,0 +1,79 @@
+cabal-version:      3.0
+name:               combinatorial-testing
+version:            0.1.0.0
+-- synopsis:
+-- description:
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             Martin Fredin
+maintainer:         fredin.martin@gmail.com
+-- copyright:
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common language
+  default-language: Haskell2010
+  ghc-options: 
+      -W
+      -Wno-unused-matches
+      
+  default-extensions:
+      BlockArguments
+      ConstraintKinds
+      DataKinds
+      DefaultSignatures
+      DeriveFoldable
+      DeriveFunctor
+      DeriveGeneric
+      DeriveTraversable
+      DerivingStrategies
+      DerivingVia
+      DuplicateRecordFields
+      EmptyCase
+      ExistentialQuantification
+      FlexibleContexts
+      FlexibleInstances
+      FunctionalDependencies
+      GADTs
+      GeneralizedNewtypeDeriving
+      InstanceSigs
+      LambdaCase
+      LexicalNegation
+      MultiParamTypeClasses
+      MultiWayIf
+      NoStarIsType
+      -- NoListTuplePuns
+      OverloadedRecordDot
+      NamedFieldPuns
+      PatternSynonyms
+      RankNTypes
+      RequiredTypeArguments
+      StandaloneDeriving
+      TupleSections
+      TypeFamilies
+      TypeFamilyDependencies
+      TypeOperators
+      TypeSynonymInstances
+      UnicodeSyntax
+
+library
+    import:           language
+    exposed-modules:  MyLib
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base ^>=4.20.0.0, QuickCheck
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+executable combinatorial-testing
+    import:           language
+    main-is:          Main.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends:
+        base ^>=4.20.0.0,
+        combinatorial-testing
+
+    hs-source-dirs:   app
+    default-language: Haskell2010
